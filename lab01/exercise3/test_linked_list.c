@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
     Node *head = NULL;
 
     /*********** reverse_list test ***********/
-    reverse_list(&head);
+    // reverse_list(&head);
     for (int i = 0; i < 5; ++i) {
         add_to_front(&head, i);
         reverse_list(&head);
