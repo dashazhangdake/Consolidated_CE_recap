@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -std=c99
+CFLAGS=-Wall -std=c99 -g # Add -g flag for debugging
 
 all: linked_list vector bit_ops
 
