@@ -24,9 +24,8 @@ factorial:
     # YOUR CODE HERE
     addi t0, a0, 0 # upper bound of for loop in t0 
     addi t1, x0, 1 # iterative variable i in t1
-    addi a0, x0, 1 # set a0 to 1
 loop:
-    blt t0, t1, exit # i <= upperbound is equivalent to upperbound > i
+    bge t1, t0, exit # when i=upperbound, exit the loop
 	mul a0, a0, t1 # res = res * i
     addi t1, t1, 1 # update iterative variable i
     jal x0, loop
