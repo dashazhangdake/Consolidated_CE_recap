@@ -92,11 +92,11 @@ inc_arr_loop:
     # Prepare to call helper_fn
     #
     # FIXME Add code to preserve the value in t0 before we call helper_fn
-   # add t3, t0, x0
+    add t3, t0, x0
     # Also ask yourself this: why don't we need to preserve t1?
     jal helper_fn
     # FIXME Restore t0
-   # mv t0, t3
+    mv t0, t3
     # Finished call for helper_fn
     addi t0, t0, 1 # Increment counter
     j inc_arr_loop
