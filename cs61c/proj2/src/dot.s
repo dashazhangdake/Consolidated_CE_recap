@@ -20,13 +20,12 @@
 dot:
 	# Prologue
     # Sanity check on a0, a1, a3, a4 as required before we write any saved register
-    li t4, 1
-    li t0, 0
-    slt t0, a2, t4
-    slt t2, a3, t4
-    slt t3, a4, t4
+    li t3, 1
+    slt t0, a2, t3
+    slt t1, a3, t3
+    slt t2, a4, t3
     
-    or t1, t2, t3 # if any stride < 1
+    or t1, t2, t1 # if any stride < 1
     
     bnez t0 length_fail
     bnez t1 stride_fail
