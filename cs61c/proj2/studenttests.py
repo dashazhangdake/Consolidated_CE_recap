@@ -272,12 +272,12 @@ class TestInitializeZero(TestCase):
     def test_failed_malloc(self):
         t = AssemblyTest(self, "../coverage-src/initialize_zero.s")
         # input the length of the desired array
-        arr_len = 2048
+        arr_len = 2**30 # Let array len be large enough to trigger malloc error
         t.input_scalar("a0", arr_len)
         # call the `initialize_zero` function
         # TODO
         t.call("initialize_zero")
-        t.execute(fail="malloc", code=26) # Specify the fail tyoe in the test
+        t.execute(code = 26)
 
     @classmethod
     def tearDownClass(cls):
