@@ -1,5 +1,3 @@
-.import ../src/dot.s
-
 .globl matmul
 .text
 # =======================================================
@@ -91,17 +89,17 @@ inner_loop_start:
 	lw t3, 12(sp)
 	addi sp, sp, 16 # temp registers might be overwritten by dot function
 
-	# # Accumulate address of return matrix to avoid messy address computation
-	# sw a0, 0(s6)
-	# addi s6, s6, 4
+	# Accumulate address of return matrix to avoid messy address computation
+	sw a0, 0(s6)
+	addi s6, s6, 4
 
-	# # If you don't like this dirty approach, let's solve this disgusting addressing problem
-	slli t3, t0, 2  # i * 4
-	mul t4, s1, t3  # dimx * i * 4
-	slli t5, t1, 2  # ystep = j * 4
-	add t5, t5, t4  # offset = dimx * 4 * i + j * 4 
-	add t5, s6, t5  # address = base + offset
-	sw a0, 0(t5)
+	# # # If you don't like this dirty approach, let's solve this disgusting addressing problem
+	# slli t3, t0, 2  # i * 4
+	# mul t4, s1, t3  # dimx * i * 4
+	# slli t5, t1, 2  # ystep = j * 4
+	# add t5, t5, t4  # offset = dimx * 4 * i + j * 4 
+	# add t5, s6, t5  # address = base + offset
+	# sw a0, 0(t5)
 
 
 	# Accumulate j (cols of m1)

@@ -12,7 +12,6 @@
 #   - If the length of the array is less than 1,
 #     this function terminates the program with error code 36
 # ==============================================================================
-ebreak
 relu:
 	# Prologue
 	addi sp, sp, -12
@@ -46,10 +45,6 @@ loop_end:
 
 exception0:
     li a0, 36
-    lw ra, 0(sp)
-    lw s0, 4(sp)
-    lw s1, 8(sp)
-    addi sp, sp, 12
     j exit
 
 exit:

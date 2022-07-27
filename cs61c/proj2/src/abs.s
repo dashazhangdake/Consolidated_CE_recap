@@ -12,7 +12,6 @@ abs:
 	# Prologue
 	
 	# PASTE HERE
-	ebreak
 	blt x0, a0 done
     sub a0, x0, a0
 	# Epilogue

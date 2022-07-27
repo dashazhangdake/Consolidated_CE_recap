@@ -619,7 +619,7 @@ def compare_files(test, actual, expected):
     test.assertEqual(
         actual_bin, expected_bin, f"Bytes of {str(full_actual)} and {str(full_expected)} did not match!"
     )
-
+   
 
 class TestChain(TestCase):
     def run_venus(self, args):
