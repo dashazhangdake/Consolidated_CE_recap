@@ -109,6 +109,7 @@ read_matrix:
 	jal fread
 	bne a0, s4, fread_error  # read fail if #readbyte doesn't match  
 
+
     #================================================================
     # Close file args:
         # a0: ptr to file descriptor
@@ -117,6 +118,7 @@ read_matrix:
 	mv a0, s0
 	jal fclose
 	bnez a0, fclose_error
+    
     
     #================================================================
     # DO NOT forget we need to return a0, a0 is the address to the matrix in memory
