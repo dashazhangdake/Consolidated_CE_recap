@@ -134,10 +134,7 @@ long long int sum_simd_unrolled(int vals[NUM_ELEMS]) {
             }
         }
 
-        result = result + (long long int) sum_arr[0] + 
-        (long long int) sum_arr[1] + 
-        (long long int) sum_arr[2] + 
-        (long long int) sum_arr[3];
+        result = result + sum_arr[0] + sum_arr[1] + sum_arr[2] + sum_arr[3];
     }
 
     /* DO NOT MODIFY ANYTHING BELOW THIS LINE (in this function) */
