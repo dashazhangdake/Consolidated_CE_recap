@@ -39,8 +39,8 @@ double benchmark(int *A, int *B, int n, int blocksize,
 
 int main( int argc, char **argv ) {
 
-    int n = 20;
-    int blocksize = 4;
+    int n = 10000;
+    int blocksize = 33;
 
     /* allocate an n*n block of integers for the matrices */
     int *A = (int*)malloc( n*n*sizeof(int) );
